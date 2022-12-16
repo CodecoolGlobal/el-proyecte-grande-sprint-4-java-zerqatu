@@ -1,5 +1,61 @@
+
 .App {
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,240,240,0.7469188358937324) 9%, rgba(0,212,255,1) 100%);
+}
+.centered {
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,240,240,0.7469188358937324) 9%, rgba(0,212,255,1) 100%);
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  box-shadow: 0 -5px 3px -3px black, 0 5px 3px -3px black;
+}
+
+.button {
+  background-color: rgba(73, 107, 119, 0.34);
+  border: 1px #3687b4;
+  width: 80%;
+  margin: 20px;
+  color: white;
+  padding: 15px 32px;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .App-logo {
@@ -14,7 +70,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,6 +81,15 @@
 
 .App-link {
   color: #61dafb;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  width: 100%;
+  margin-top: 40px;
 }
 
 @keyframes App-logo-spin {

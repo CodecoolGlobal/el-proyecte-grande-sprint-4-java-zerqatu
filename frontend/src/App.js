@@ -1,11 +1,17 @@
 import logo from './logo.svg';
+import fithubLogo from '../src/images/fithub_logo_text.png'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <img src={fithubLogo} className={App-logo} alt="logo"/>
+      <div className="centered">
+        <button className="button" id="loginButton" ><span>LOGIN</span></button>
+        <button className="button" id="registerButton" ><span>REGISTER</span></button>
+      </div>
+        <header className="App-header">
+        {/*<img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -16,8 +22,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
-        <button id="clickButton" onClick={handleClick}>Click me!</button>
+        </a>*/}
+
+
       </header>
     </div>
   );
