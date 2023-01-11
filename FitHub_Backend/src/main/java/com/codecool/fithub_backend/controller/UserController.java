@@ -1,29 +1,28 @@
 package com.codecool.fithub_backend.controller;
 
 import com.codecool.fithub_backend.model.User;
-import com.codecool.fithub_backend.model.UserStorage;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import com.codecool.fithub_backend.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.net.http.HttpResponse;
-import java.util.List;
+import java.util.Optional;
 
 @RestController
+@RequestMapping
 public class UserController {
 
-    public UserStorage userStorage = new UserStorage();
+    private final UserService userService;
 
-
-    @GetMapping("users")
-    public List<User> getUsers(){
-
-        System.out.println("Test");
-        return userStorage.getUsers();
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
-    @GetMapping("users/random")
-    public User getRandomUser(){
-        return userStorage.addRandomUser();
+
+    @GetMapping("user/{id}")
+    public Optional<User> getUsers(@PathVariable long id){
+        return userService.getUserById(id);
     }
+
 }
