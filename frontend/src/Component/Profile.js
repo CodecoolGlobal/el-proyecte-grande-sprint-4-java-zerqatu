@@ -1,12 +1,12 @@
 import Navbar from "./Navbar";
-import UserData from "./UserData";
-
+import UserStats from "./UserStats";
 
 const Profile = () => {
     return(
         <div className="profile">
-        <Navbar/>
-        <UserData/>
+            <Navbar/>
+            <UserStats/>
+            <UserData/>
         </div>
     )
 }
