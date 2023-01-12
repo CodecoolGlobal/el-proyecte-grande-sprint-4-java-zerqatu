@@ -18,6 +18,7 @@ public class UserConfiguration {
             User maxMustermann = new User(
                     "Max_Mustermann",
                     "max@mustermann@gmail.com",
+                    "123",
                     LocalDate.of(1990, Month.APRIL, 1),
                     "male",
                     170,

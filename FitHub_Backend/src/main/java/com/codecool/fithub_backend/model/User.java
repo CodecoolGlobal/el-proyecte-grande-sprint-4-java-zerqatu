@@ -13,6 +13,7 @@ public class User {
     private long id;
     private String userName;
     private String email;
+    private String password;
     private LocalDate dateOfBirth;
     @Transient
     private Integer age;
@@ -28,6 +29,7 @@ public class User {
 
     public User(String userName,
                 String email,
+                String password,
                 LocalDate dateOfBirth,
                 String gender,
                 int height,
@@ -35,6 +37,7 @@ public class User {
                 int dailyCalories) {
         this.userName = userName;
         this.email = email;
+        this.password = password;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.height = height;
@@ -108,6 +111,14 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
