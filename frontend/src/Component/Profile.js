@@ -1,11 +1,10 @@
 import Navbar from "./Navbar";
-import UserStats from "./UserStats";
+import UserData from "./UserData";
 
 const Profile = () => {
     return(
         <div className="profile">
             <Navbar/>
-            <UserStats/>
             <UserData/>
         </div>
     )

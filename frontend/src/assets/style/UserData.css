@@ -1,0 +1,38 @@
+.user-data {
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #fafaff;
+    color: black;
+    font-size: 20px;
+    margin-left: 20%;
+    margin-top: 12%;
+
+}
+
+.userData{
+    background-color: #fafaff;
+}
+
+body{
+    background-color: #fafaff;
+}
+
+.user-calories{
+    background-color: #fafaff;
+    color: black;
+    margin-left: 53%;
+    margin-top: -30%;
+    font-size: 500%;
+}
+
+div + div{
+    line-height: 300%;
+}
+
+.left{
+    margin-left: 60%;
+    margin-top: -5%;
+    font-size: 200%;
+}
