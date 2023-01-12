@@ -1,5 +1,10 @@
 import React from "react";
 import useFetch from "react-fetch-hook"
+import fithubLogo from "../assets/images/fithub_logo_text.png";
+import App from "../App";
+import logo from "../logo.svg";
+import usericon from "../assets/images/usericon.png";
+import caloriesGraph from "../assets/images/graph.png"
 
 export default function UserData() {
     const {isLoading, error, data} = useFetch("/user/1")
@@ -8,15 +13,21 @@ export default function UserData() {
 
     return (
         <div className="userData">
-            <div>{data.id}</div>
-            <div>{data.userName}</div>
-            <div>{data.email}</div>
-            <div>{data.dateOfBirth}</div>
-            <div>{data.age}</div>
-            <div>{data.gender}</div>
-            <div>{data.height}</div>
-            <div>{data.weight}</div>
-            <div>{data.dailyCalories}</div>
+            <div className="user-data">
+                <img src={usericon} className={App-logo} alt="logo"/>
+                <div>{data.userName}</div>
+                <div>{data.age} years</div>
+                <div>{data.gender}</div>
+                <div>{data.height} cm</div>
+                <div>{data.weight} kg</div>
+            </div>
+            <div className="user-calories">
+                {data.dailyCalories} kcal
+            </div>
+            <div className="left">
+                Left
+            </div>
         </div>
+
     )
 }
