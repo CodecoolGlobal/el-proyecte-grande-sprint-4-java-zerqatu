@@ -1,4 +1,4 @@
-import fithubLogo from "../images/fithub_logo_text.png";
+import fithubLogo from "../assets/images/fithub_logo_text.png";
 import logo from "../logo.svg";
 import App from "../App";
 
