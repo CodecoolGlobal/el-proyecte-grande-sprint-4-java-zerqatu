@@ -1,4 +1,4 @@
-package com.codecool.fithub_backend.categoryRepository;
+package com.codecool.fithub_backend.data;
 
 public enum Category {
     UPPER_BODY,

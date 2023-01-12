@@ -1,4 +1,4 @@
-package com.codecool.fithub_backend.tagRepository;
+package com.codecool.fithub_backend.data;
 
 public enum Tag {
     CHEST,
