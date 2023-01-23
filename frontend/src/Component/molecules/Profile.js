@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import UserData from "./UserData";
+import UserData from "../atoms/UserData";
 
 const Profile = () => {
     return(

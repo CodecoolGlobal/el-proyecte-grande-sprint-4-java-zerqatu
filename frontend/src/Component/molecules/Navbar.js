@@ -1,14 +1,12 @@
 import {Link} from "react-router-dom";
-import fithubLogo from "../assets/images/fithub_logo_text.png";
-import App from "../App";
-import logo from "../logo.svg";
+import {Fragment} from "react";
+import FitHubLogo from "../atoms/FitHubLogoBlack";
+
 
 const Navbar = () => {
     return(
     <div className="sideNav">
-        <div className="item">
-            <img src={fithubLogo} className={App-logo} alt="logo"/>
-        </div>
+        <FitHubLogo></FitHubLogo>
         <div className="item">
             <Link to="/profile">Overview</Link>
         </div>
