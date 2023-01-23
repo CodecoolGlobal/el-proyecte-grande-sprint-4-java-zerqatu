@@ -1,6 +1,7 @@
 package com.codecool.fithub_backend.beanConfiguration;
 
 import com.codecool.fithub_backend.model.User;
+import com.codecool.fithub_backend.service.UserService;
 import com.codecool.fithub_backend.userRepository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +12,8 @@ import java.time.Month;
 
 @Configuration
 public class UserConfiguration {
+
+
 
     @Bean
     CommandLineRunner commandLineRunner(UserRepository userRepository) {

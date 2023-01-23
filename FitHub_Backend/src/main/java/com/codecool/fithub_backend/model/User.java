@@ -1,6 +1,8 @@
 package com.codecool.fithub_backend.model;
 
 
+import com.codecool.fithub_backend.service.UserLogicService;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
@@ -21,6 +23,8 @@ public class User {
     private int height;
     private int weight;
     private int dailyCalories;
+    private double BMI;
+    private BmiType bmiType;
 
 
 
@@ -119,6 +123,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public double getBMI() {
+        return BMI;
+    }
+
+    public void setBMI(double BMI) {
+        this.BMI = BMI;
+    }
+
+    public BmiType getBmiType() {
+        return bmiType;
+    }
+
+    public void setBmiType(BmiType bmiType) {
+        this.bmiType = bmiType;
     }
 
     @Override
