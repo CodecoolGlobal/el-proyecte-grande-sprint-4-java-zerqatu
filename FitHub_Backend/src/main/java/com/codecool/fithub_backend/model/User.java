@@ -17,17 +17,24 @@ public class User {
     private LocalDate dateOfBirth;
     @Transient
     private Integer age;
+    @Enumerated(EnumType.STRING)
     private Gender gender;
     private int height;
     private int weight;
     private int dailyCalories;
     private double BMI;
+    @Enumerated(EnumType.STRING)
     private BmiType bmiType;
     private int Activity;
 
 
 
     public User() {
+    }
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
 
     public User(String userName,

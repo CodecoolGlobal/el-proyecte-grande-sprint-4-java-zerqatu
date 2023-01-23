@@ -19,15 +19,9 @@ public class UserConfiguration {
     CommandLineRunner commandLineRunner(UserRepository userRepository) {
         return args -> {
             User maxMustermann = new User(
-                    "Max_Mustermann",
                     "max@mustermann@gmail.com",
-                    "123",
-                    LocalDate.of(1990, Month.APRIL, 1),
-                    Gender.MALE,
-                    170,
-                    80,
-                    2500,
-                    3);
+                    "123"
+                    );
 
             userRepository.save(maxMustermann);
         };

@@ -4,6 +4,8 @@ import com.codecool.fithub_backend.model.User;
 import com.codecool.fithub_backend.userRepository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Optional;
 
 
@@ -11,9 +13,11 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final UserLogicService userLogicService;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, UserLogicService userLogicService) {
         this.userRepository = userRepository;
+        this.userLogicService = userLogicService;
     }
 
     public Optional<User> getUserById(long id) {
@@ -21,6 +25,9 @@ public class UserService {
     }
 
     public void updateUser(User user) {
+        user.setAge(Period.between(user.getDateOfBirth(), LocalDate.now()).getYears());
+        userLogicService.calculateBMI(user);
+        userLogicService.setDailyCaloriesByActivity(user);
         userRepository.save(user);
     }
 
