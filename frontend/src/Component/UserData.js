@@ -1,10 +1,8 @@
 import React from "react";
 import useFetch from "react-fetch-hook"
-import fithubLogo from "../assets/images/fithub_logo_text.png";
 import App from "../App";
 import logo from "../logo.svg";
 import usericon from "../assets/images/usericon.png";
-import caloriesGraph from "../assets/images/graph.png"
 
 export default function UserData() {
     const {isLoading, error, data} = useFetch("/user/1")
