@@ -7,15 +7,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserLogicService {
 
-    private void calculateBMI(User user) {
+    public void calculateBMI(User user) {
         user.setBMI(user.getWeight() / (user.getHeight() / 100.0));
+        setBmiTypeByBmi(user);
     }
 
-    private void setBmiTypeByBmi(User user) {
+    public void setBmiTypeByBmi(User user) {
         double userBmi = user.getBMI();
         if (userBmi >= 30) {
             user.setBmiType(BmiType.OBESITY);
-        } else if (userBmi <= 29.9 && userBmi >= 25){
+        } else if (userBmi <= 29.9 && userBmi >= 25) {
             user.setBmiType(BmiType.OVERWEIGHT);
         } else if (userBmi <= 24.9 && userBmi >= 18.5) {
             user.setBmiType(BmiType.NORMAL_WEIGHT);
@@ -23,4 +24,37 @@ public class UserLogicService {
             user.setBmiType(BmiType.UNDERWEIGHT);
         }
     }
+
+    public int calculateDailyCalories(User user) {
+        switch (user.getGender()) {
+            case MALE -> {
+                return (int) (88.362 +
+                        (13.397 * user.getWeight()) +
+                        (4.799 * user.getHeight()) -
+                        (5.677 * user.getAge()));
+            }
+            case FEMALE -> {
+                return (int) (447.593 +
+                        (9.247 * user.getWeight()) +
+                        (3.098 * user.getHeight()) -
+                        (4.330 * user.getAge()));
+            }
+            default -> {
+                return 0;
+            }
+        }
+    }
+
+    public void setDailyCaloriesByActivity(User user) {
+        switch (user.getActivity()) {
+            case 1 -> user.setDailyCalories((int) (calculateDailyCalories(user) * 1.2));
+            case 2 -> user.setDailyCalories((int) (calculateDailyCalories(user) * 1.375));
+            case 3 -> user.setDailyCalories((int) (calculateDailyCalories(user) * 1.55));
+            case 4 -> user.setDailyCalories((int) (calculateDailyCalories(user) * 1.725));
+            case 5 -> user.setDailyCalories((int) (calculateDailyCalories(user) * 1.9));
+            default -> user.setDailyCalories(calculateDailyCalories(user));
+        }
+    }
+
+
 }
