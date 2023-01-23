@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import Navbar from "../molecules/Navbar";
 import UserData from "../atoms/UserData";
 
 const Profile = () => {

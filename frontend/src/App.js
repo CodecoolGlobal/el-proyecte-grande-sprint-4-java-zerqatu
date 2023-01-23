@@ -4,7 +4,7 @@ import './assets/style/UserData.css';
 import './assets/style/App.css';
 import './assets/style/Navbar.css';
 import {Route, Routes} from "react-router-dom";
-import Profile from "./Component/molecules/Profile";
+import Profile from "./Component/organisms/Profile";
 import Login from "./Component/molecules/Login";
 
 function App() {
