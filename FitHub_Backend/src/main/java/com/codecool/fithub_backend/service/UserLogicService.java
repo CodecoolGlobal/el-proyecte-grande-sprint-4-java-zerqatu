@@ -4,11 +4,17 @@ import com.codecool.fithub_backend.model.BmiType;
 import com.codecool.fithub_backend.model.User;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 @Service
 public class UserLogicService {
 
     public void calculateBMI(User user) {
-        user.setBMI(user.getWeight() / (user.getHeight() / 100.0));
+        double bmi = user.getWeight() / (user.getHeight() / 100.0);
+        BigDecimal bigBmi = new BigDecimal(bmi).setScale(2, RoundingMode.HALF_UP);
+        double roundedBmi = bigBmi.doubleValue();
+        user.setBMI(roundedBmi);
         setBmiTypeByBmi(user);
     }
 

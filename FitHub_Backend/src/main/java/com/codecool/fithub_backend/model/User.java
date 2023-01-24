@@ -17,13 +17,12 @@ public class User {
     private LocalDate dateOfBirth;
     @Transient
     private Integer age;
-    @Enumerated(EnumType.STRING)
+
     private Gender gender;
     private int height;
     private int weight;
     private int dailyCalories;
     private double BMI;
-    @Enumerated(EnumType.STRING)
     private BmiType bmiType;
     private int Activity;
 
@@ -157,18 +156,23 @@ public class User {
         Activity = activity;
     }
 
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", age=" + age +
-                ", gender='" + gender + '\'' +
+                ", gender=" + gender +
                 ", height=" + height +
                 ", weight=" + weight +
                 ", dailyCalories=" + dailyCalories +
+                ", BMI=" + BMI +
+                ", bmiType=" + bmiType +
+                ", Activity=" + Activity +
                 '}';
     }
 }

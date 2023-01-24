@@ -6,7 +6,13 @@ public enum BmiType {
     OVERWEIGHT("overweight"),
     OBESITY("obese");
 
+    private String BMIDescription;
 
-    BmiType(String description) {
+    BmiType(String BMIDescription) {
+        this.BMIDescription = BMIDescription;
+    }
+
+    public String getBMIDescription() {
+        return BMIDescription;
     }
 }
