@@ -11,7 +11,8 @@ import java.math.RoundingMode;
 public class UserLogicService {
 
     public void calculateBMI(User user) {
-        double bmi = user.getWeight() / (user.getHeight() / 100.0);
+        double bmi = user.getWeight() / Math.pow((user.getHeight() / 100.0), 2);
+        System.out.println(bmi);
         BigDecimal bigBmi = new BigDecimal(bmi).setScale(2, RoundingMode.HALF_UP);
         double roundedBmi = bigBmi.doubleValue();
         user.setBMI(roundedBmi);

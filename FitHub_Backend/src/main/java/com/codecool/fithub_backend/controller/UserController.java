@@ -12,11 +12,9 @@ import java.util.Optional;
 public class UserController {
 
     private final UserService userService;
-    private final UserLogicService userLogicService;
 
-    public UserController(UserService userService, UserLogicService userLogicService) {
+    public UserController(UserService userService) {
         this.userService = userService;
-        this.userLogicService = userLogicService;
     }
 
 
@@ -30,4 +28,8 @@ public class UserController {
         userService.updateUser(user);
     }
 
+    @PostMapping("/registration")
+    public void registerUser(@RequestBody User user) {
+        userService.addUser(user);
+    }
 }
