@@ -17,24 +17,34 @@ public class User {
     private LocalDate dateOfBirth;
     @Transient
     private Integer age;
-    private String gender;
+
+    private Gender gender;
     private int height;
     private int weight;
     private int dailyCalories;
+    private double BMI;
+    private BmiType bmiType;
+    private int Activity;
 
 
 
     public User() {
     }
 
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     public User(String userName,
                 String email,
                 String password,
                 LocalDate dateOfBirth,
-                String gender,
+                Gender gender,
                 int height,
                 int weight,
-                int dailyCalories) {
+                int dailyCalories,
+                int activity) {
         this.userName = userName;
         this.email = email;
         this.password = password;
@@ -43,6 +53,7 @@ public class User {
         this.height = height;
         this.weight = weight;
         this.dailyCalories = dailyCalories;
+        this.Activity = activity;
     }
 
     public long getId() {
@@ -73,11 +84,11 @@ public class User {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -121,18 +132,47 @@ public class User {
         this.password = password;
     }
 
+    public double getBMI() {
+        return BMI;
+    }
+
+    public void setBMI(double BMI) {
+        this.BMI = BMI;
+    }
+
+    public BmiType getBmiType() {
+        return bmiType;
+    }
+
+    public void setBmiType(BmiType bmiType) {
+        this.bmiType = bmiType;
+    }
+
+    public int getActivity() {
+        return Activity;
+    }
+
+    public void setActivity(int activity) {
+        Activity = activity;
+    }
+
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", age=" + age +
-                ", gender='" + gender + '\'' +
+                ", gender=" + gender +
                 ", height=" + height +
                 ", weight=" + weight +
                 ", dailyCalories=" + dailyCalories +
+                ", BMI=" + BMI +
+                ", bmiType=" + bmiType +
+                ", Activity=" + Activity +
                 '}';
     }
 }
