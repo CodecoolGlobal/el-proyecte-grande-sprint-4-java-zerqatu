@@ -1,4 +1,4 @@
-import fithubLogo from "../../assets/images/.png";
+import fithubLogo from "../../assets/images/fithub_logo_text_white.png";
 import App from "../../App";
 import logo from "../../logo.svg";
 import React from "react";
@@ -11,3 +11,5 @@ const fitHubLogoWhite  = () => {
         </div>
     )
 }
+
+export default fitHubLogoWhite
