@@ -30,6 +30,7 @@ public class UserController {
 
     @PostMapping("/registration")
     public void registerUser(@RequestBody User user) {
+        System.out.println(user);
         userService.addUser(user);
     }
 }

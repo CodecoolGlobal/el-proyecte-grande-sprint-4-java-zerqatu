@@ -1,18 +1,22 @@
 import {useState} from "react";
 
+
 const RegisterForm = () => {
+    //let history = useHistory();
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
     const submit = e => {
-        e.preventDefault()
         const userInfo = {email, password}
-        fetch('/user',{
+        e.preventDefault()
+        fetch('/registration',{
             method: 'POST',
             body: JSON.stringify({ userInfo }),
             headers: {'Content-Type': 'application/json' },
         })
             .then(res => res.json())
+            .catch(alert('error'))
+                //history.push()
     }
 
     return(
