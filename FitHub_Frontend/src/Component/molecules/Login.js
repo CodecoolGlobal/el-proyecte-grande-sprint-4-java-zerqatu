@@ -20,7 +20,7 @@ const LoginForm = () => {
             <form onSubmit={submit}>
                 <label className="label">Login</label><br/>
                 <input
-                    className="inputLogin"
+                    //className="inputLogin"
                     type="text"
                     name="user[email]"
                     placeholder="Enter email"
@@ -28,7 +28,7 @@ const LoginForm = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}/><br/>
                 <input
-                    className="inputLogin"
+                    //className="inputLogin"
                     type="text"
                     name="user[password]"
                     placeholder="Enter password"
