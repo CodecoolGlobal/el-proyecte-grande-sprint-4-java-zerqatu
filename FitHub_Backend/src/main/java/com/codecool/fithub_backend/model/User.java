@@ -12,12 +12,13 @@ public class User {
     @GeneratedValue
     private long id;
     private String userName;
+    @Column(nullable = false, unique = true)
     private String email;
+    @Column(nullable = false)
     private String password;
     private LocalDate dateOfBirth;
     @Transient
     private Integer age;
-
     private Gender gender;
     private int height;
     private int weight;
@@ -25,7 +26,6 @@ public class User {
     private double BMI;
     private BmiType bmiType;
     private int Activity;
-
 
 
     public User() {
