@@ -1,11 +1,11 @@
 import {Link} from "react-router-dom";
-import FitHubLogo from "../atoms/FitHubLogoBlack";
+import FitHubLogoWhite from "../atoms/FitHubLogoWhite";
 
 
 const Navbar = () => {
     return(
     <div className="sideNav">
-        <FitHubLogo></FitHubLogo>
+        <FitHubLogoWhite></FitHubLogoWhite>
         <div className="item">
             <Link to="/profile">Overview</Link>
         </div>

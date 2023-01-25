@@ -24,12 +24,14 @@ const RegisterForm = () => {
                 <input
                     type="text"
                     name="user[email]"
+                    placeholder="Enter email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}/><br/>
                 <input
                     type="text"
                     name="user[password]"
+                    placeholder="Enter password"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}/><br/>
