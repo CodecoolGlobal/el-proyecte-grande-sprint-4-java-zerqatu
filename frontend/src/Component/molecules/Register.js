@@ -2,20 +2,19 @@ import {useState} from "react";
 
 
 const RegisterForm = () => {
-    //let history = useHistory();
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
     const submit = e => {
-        e.preventDefault()
-        fetch('/registration',{
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: {'Content-Type': 'application/json' },
-        })
-            .then(res => res.json())
+        e.preventDefault();
+            fetch('/registration',{
+                method: 'POST',
+                body: JSON.stringify({email, password}),
+                headers: {'Content-Type': 'application/json' },
+            })
+                .then(res => res.status >= 400 ? alert('Email already taken'): console.log("ok"))
+                // console.log('error' + res.status)
 
-                //history.push()
+
     }
 
     return(
