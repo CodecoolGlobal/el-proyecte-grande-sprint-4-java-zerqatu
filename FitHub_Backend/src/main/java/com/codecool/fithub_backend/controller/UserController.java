@@ -39,6 +39,7 @@ public class UserController {
         String password = user.getPassword();
         System.out.println(mail);
         System.out.println(password);
+
     }
 
     @GetMapping("/user/{mail}/{password}")
