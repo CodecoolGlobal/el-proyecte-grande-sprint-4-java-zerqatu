@@ -33,12 +33,17 @@ public class UserController {
         userService.addUser(user);
     }
 
-    @GetMapping("/user/login")
-    public Optional<User> getUserByLogin(@RequestBody User user) {
+    @PostMapping("/user/login")
+    public void getUserByLogin(@RequestBody User user) {
         String mail = user.getEmail();
         String password = user.getPassword();
         System.out.println(mail);
         System.out.println(password);
+    }
+
+    @GetMapping("/user/{mail}/{password}")
+    public Optional<User> getUserByMail(@PathVariable("mail") String mail,
+                                        @PathVariable("password") String password) {
         return userService.getUserByEmail(mail, password);
     }
 }
