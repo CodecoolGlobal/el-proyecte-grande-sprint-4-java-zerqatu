@@ -25,7 +25,7 @@ public class UserService {
     }
 
     public void updateUser(User user) {
-        user.setAge(Period.between(user.getDateOfBirth(), LocalDate.now()).getYears());
+        user.setAge(Period.between(LocalDate.parse(user.getDateOfBirth()), LocalDate.now()).getYears());
         userLogicService.calculateBMI(user);
         userLogicService.setDailyCaloriesByActivity(user);
         userRepository.save(user);
@@ -34,5 +34,9 @@ public class UserService {
 
     public void addUser(User user) {
         userRepository.save(user);
+    }
+
+    public Optional<User> getUserByEmail(String mail, String password) {
+        return userRepository.findUserByEmailAndPassword(mail, password);
     }
 }

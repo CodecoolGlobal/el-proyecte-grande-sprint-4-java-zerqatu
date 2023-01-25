@@ -16,8 +16,8 @@ public class User {
     private String email;
     @Column(nullable = false)
     private String password;
-    private LocalDate dateOfBirth;
-    @Transient
+
+    private String dateOfBirth;
     private Integer age;
     private Gender gender;
     private int height;
@@ -39,7 +39,7 @@ public class User {
     public User(String userName,
                 String email,
                 String password,
-                LocalDate dateOfBirth,
+                String dateOfBirth,
                 Gender gender,
                 int height,
                 int weight,
@@ -76,11 +76,11 @@ public class User {
         this.email = email;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -117,7 +117,7 @@ public class User {
     }
 
     public Integer getAge() {
-        return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
+        return age;
     }
 
     public void setAge(Integer age) {

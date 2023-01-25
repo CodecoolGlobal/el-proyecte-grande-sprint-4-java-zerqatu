@@ -30,7 +30,15 @@ public class UserController {
 
     @PostMapping("/registration")
     public void registerUser(@RequestBody User user) {
-        System.out.println(user);
         userService.addUser(user);
+    }
+
+    @GetMapping("/user/login")
+    public Optional<User> getUserByLogin(@RequestBody User user) {
+        String mail = user.getEmail();
+        String password = user.getPassword();
+        System.out.println(mail);
+        System.out.println(password);
+        return userService.getUserByEmail(mail, password);
     }
 }
