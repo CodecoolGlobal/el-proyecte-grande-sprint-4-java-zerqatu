@@ -7,15 +7,14 @@ const RegisterForm = () => {
     const [password, setPassword] = useState()
 
     const submit = e => {
-        const userInfo = {email, password}
         e.preventDefault()
         fetch('/registration',{
             method: 'POST',
-            body: JSON.stringify({ userInfo }),
+            body: JSON.stringify({ email, password }),
             headers: {'Content-Type': 'application/json' },
         })
             .then(res => res.json())
-            .catch(alert('error'))
+
                 //history.push()
     }
 
