@@ -24,7 +24,7 @@ const Navbar = () => {
                     {NavbarLink("Workouts", "/workouts", "fa-dumbbell")}
                     {NavbarLink("Meals", "/meals", "fa-apple-whole")}
                     {NavbarLink("Settings", "/settings", "fa-gear")}
-                    {NavbarLink("Logout", "/logout", "fa-right-from-bracket")}
+                    {NavbarLink("Logout", "/", "fa-right-from-bracket")}
                 </ul>
             </div>
         </nav>
