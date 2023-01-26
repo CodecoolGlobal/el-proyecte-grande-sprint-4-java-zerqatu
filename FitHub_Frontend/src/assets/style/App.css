@@ -110,6 +110,12 @@
   line-height: initial;
 }
 
+.workouts:hover {
+  background-color: #3445b4;
+  color: white;
+  cursor: pointer;
+}
+
 .workout-box {
   line-height: 40px;
   justify-content: space-evenly;
