@@ -4,7 +4,7 @@ public enum Tag {
     CHEST,
     BICEPS,
     TRICEPS,
-    FOREARM,
+    FOREARMS,
     SHOULDERS,
     UPPER_BACK,
     LOWER_BACK,
