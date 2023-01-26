@@ -3,7 +3,7 @@ import UserData from "../atoms/UserData";
 
 const Profile = () => {
     return(
-        <div className="profile">
+        <div className="wrapper d-flex align-items-stretch">
             <Navbar/>
             <UserData/>
         </div>

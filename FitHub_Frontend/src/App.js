@@ -1,8 +1,10 @@
+import './assets/style/Sidebar.css';
 import './assets/style/App.css';
+
+/*
 import './assets/style/Navbar.css';
 import './assets/style/UserData.css';
-import './assets/style/App.css';
-import './assets/style/Navbar.css';
+ */
 import {Route, Routes} from "react-router-dom";
 import Profile from "./Component/organisms/Profile";
 import Landing from "./Component/molecules/Landing";
