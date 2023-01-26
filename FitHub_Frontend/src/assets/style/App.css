@@ -99,3 +99,12 @@
 .inputLogin{
   font-size: 20px;
 }
+
+.workouts {
+  border-radius: 50px;
+  border: 2px solid #3445b4;
+  padding: 20px;
+  margin-right: 20px;
+  width: 110%;
+  height: 110%;
+}
