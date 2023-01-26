@@ -6,7 +6,7 @@ import logo from "../../logo.svg";
 const fitHubLogoBlack = () => {
     return(
         <div className="fitHubLogo">
-            <img src={fithubLogo} className={App-logo} alt="logo"/>
+            <img src={fithubLogo} className="App-logo" alt="logo"/>
         </div>
     )
 }
