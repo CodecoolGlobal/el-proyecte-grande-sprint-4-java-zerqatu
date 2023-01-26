@@ -1,6 +1,5 @@
 import './assets/style/Sidebar.css';
 import './assets/style/App.css';
-
 /*
 import './assets/style/Navbar.css';
 import './assets/style/UserData.css';
@@ -11,6 +10,7 @@ import Landing from "./Component/molecules/Landing";
 import Register from "./Component/molecules/Register";
 import Login from "./Component/molecules/Login";
 import Workouts from "./Component/organisms/Workouts";
+import SettingsModal from "./Component/atoms/SettingsPage";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
           <Route path="/register" element={<Register/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/workouts" element={<Workouts/>}></Route>
+          <Route path="settings" element={<SettingsModal/>}></Route>
       </Routes>
   );
 }
