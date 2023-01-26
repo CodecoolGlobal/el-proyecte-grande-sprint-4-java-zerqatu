@@ -1,7 +1,8 @@
 package com.codecool.fithub_backend.model;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.time.Period;
 

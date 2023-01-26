@@ -1,0 +1,236 @@
+exercise-data:
+  exercises:
+    - exercise: WALKING
+      category:
+        - CARDIO
+    - exercise: RUNNING
+      category:
+        - CARDIO
+    - exercise: JOGGING
+      category:
+        - CARDIO
+    - exercise: CYCLING
+      category:
+        - CARDIO
+    - exercise: CYCLING_STATIONARY
+      category:
+        - CARDIO
+    - exercise: SWIMMING
+      category:
+        - CARDIO
+    - exercise: HIKING
+      category:
+        - CARDIO
+    - exercise: CRUNCHES
+      category:
+        - CORE
+    - exercise: PLANK
+      category:
+        - CORE
+    - exercise: RUSSIAN_TWIST
+      category:
+        - CORE
+    - exercise: JACKKNIFE
+      category:
+        - CORE
+    - exercise: LEG_RAISE
+      category:
+        - CORE
+    - exercise: SIDE_PLANK
+      category:
+        - CORE
+    - exercise: SQUATS
+      category:
+        - LEGS
+      tag:
+        - GLUTES
+        - QUADS
+        - HAMSTRINGS
+        - CALVES
+    - exercise: ROMANIAN_DEADLIFT
+      category:
+        - LEGS
+        - BACK_AND_SHOULDERS
+      tag:
+        - GLUTES
+        - HAMSTRINGS
+        - LOWER_BACK
+    - exercise: GOBLET_SQUAT
+      category:
+        - LEGS
+      tag:
+        - GLUTES
+        - QUADS
+        - HAMSTRINGS
+        - CALVES
+    - exercise: LEG_EXTENSION
+      category:
+        - LEGS
+      tag:
+        - QUADS
+    - exercise: LUNGES
+      category:
+        - LEGS
+      tag:
+        - GLUTES
+        - QUADS
+        - HAMSTRINGS
+        - CALVES
+    - exercise: CALF_RAISES
+      category:
+        - LEGS
+      tag:
+        - CALVES
+    - exercise: LEG_PRESS
+      category:
+        - LEGS
+      tag:
+        - QUADS
+        - HAMSTRINGS
+    - exercise: LEG_CURL
+      category:
+        - LEGS
+      tag:
+        - HAMSTRINGS
+        - CALVES
+    - exercise: BENT_OVER_ROW
+      category:
+        - BACK_AND_SHOULDERS
+      tag:
+        - SHOULDERS
+        - UPPER_BACK
+        - LOWER_BACK
+    - exercise: BACK_EXTENSION
+      category:
+        - BACK_AND_SHOULDERS
+        - LEGS
+      tag:
+        - LOWER_BACK
+        - HAMSTRINGS
+        - CALVES
+        - GLUTES
+    - exercise: SUPERMAN
+      category:
+        - BACK_AND_SHOULDERS
+        - LEGS
+      tag:
+        - SHOULDERS
+        - LOWER_BACK
+        - UPPER_BACK
+        - GLUTES
+        - HAMSTRINGS
+    - exercise: SEATED_CABLE_ROWS
+      category:
+        - BACK_AND_SHOULDERS
+        - UPPER_BODY
+      tag:
+        - UPPER_BACK
+        - SHOULDERS
+        - BICEPS
+    - exercise: PULL_UP
+      category:
+        - BACK_AND_SHOULDERS
+        - UPPER_BODY
+      tag:
+        - UPPER_BACK
+        - BICEPS
+    - exercise: PULL_DOWN
+      category:
+        - BACK_AND_SHOULDERS
+        - UPPER_BODY
+      tag:
+        - UPPER_BACK
+        - BICEPS
+    - exercise: BACK_ROWS
+      category:
+        - BACK_AND_SHOULDERS
+        - UPPER_BODY
+      tag:
+        - UPPER_BACK
+        - SHOULDERS
+        - BICEPS
+    - exercise: SHOULDER_SHRUG
+      category:
+        - BACK_AND_SHOULDERS
+      tag:
+        - UPPER_BACK
+        - SHOULDERS
+    - exercise: DUMBBELL_BENCH_PRESS
+      category:
+        - UPPER_BODY
+        - BACK_AND_SHOULDERS
+      tag:
+        - SHOULDERS
+        - CHEST
+        - BICEPS
+        - TRICEPS
+        - FOREARMS
+    - exercise: PUSH_UPS
+      category:
+        - UPPER_BODY
+        - BACK_AND_SHOULDERS
+      tag:
+        - CHEST
+        - TRICEPS
+    - exercise: DUMBBELL_BICEP_CURLS
+      category:
+        - UPPER_BODY
+      tag:
+        - BICEPS
+    - exercise: BENCH_PRESS
+      category:
+        - UPPER_BODY
+        - BACK_AND_SHOULDERS
+      tag:
+        - SHOULDERS
+        - CHEST
+        - BICEPS
+        - TRICEPS
+        - FOREARMS
+    - exercise: CHIN_UP
+      category:
+        - UPPER_BODY
+        - BACK_AND_SHOULDERS
+      tag:
+        - BICEPS
+        - UPPER_BACK
+    - exercise: TRICEP_DIPS
+      category:
+        - UPPER_BODY
+        - BACK_AND_SHOULDERS
+      tag:
+        - TRICEPS
+        - CHEST
+        - UPPER_BACK
+    - exercise: OVERHEAD_TRICEPS_EXTENSION
+      category:
+        - UPPER_BODY
+      tag:
+        - TRICEPS
+    - exercise: PUSH_DOWN
+      category:
+        - UPPER_BODY
+      tag:
+        - TRICEPS
+    - exercise: DUMBBELL_FLYES
+      category:
+        - UPPER_BODY
+        - BACK_AND_SHOULDERS
+      tag:
+        - CHEST
+        - BICEPS
+        - SHOULDERS
+    - exercise: INCLINE_DUMBBELL_PRESS
+      category:
+        - UPPER_BODY
+      tag:
+        - CHEST
+        - TRICEPS
+        - SHOULDERS
+    - exercise: DECLINE_DUMBBELL_PRESS
+      category:
+        - UPPER_BODY
+      tag:
+        - CHEST
+        - TRICEPS
+        - SHOULDERS
