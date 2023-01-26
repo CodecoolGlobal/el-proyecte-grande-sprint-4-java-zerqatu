@@ -1,8 +1,9 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const LoginForm = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    let url = '/profile'
 
     const submit = e => {
         e.preventDefault();
@@ -11,8 +12,14 @@ const LoginForm = () => {
             body: JSON.stringify({email, password}),
             headers: {'Content-Type': 'application/json'},
         })
-            .then(res => res.status >= 400 ? alert('Email already taken') : console.log("ok"))
-            .then(res => res.json())
+            .then(res => res.status >= 400 ? alert('Email already taken') :
+                fetch('/user/login', {
+                method: 'GET',
+                body: JSON.stringify({email, password}),
+                headers: {'Content-Type': 'application/json'},
+            }))
+                .then(res => res.status >= 400 ? alert('You need to make an Account') : window.location.href = url)
+
     }
 
     return(
@@ -20,7 +27,6 @@ const LoginForm = () => {
             <form onSubmit={submit}>
                 <label className="label">Login</label><br/>
                 <input
-                    //className="inputLogin"
                     type="text"
                     name="user[email]"
                     placeholder="Enter email"
@@ -28,7 +34,6 @@ const LoginForm = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}/><br/>
                 <input
-                    //className="inputLogin"
                     type="text"
                     name="user[password]"
                     placeholder="Enter password"

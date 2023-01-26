@@ -3,6 +3,7 @@ import FitHubLogoWhite from "../atoms/FitHubLogoWhite";
 
 
 const Navbar = () => {
+
     return(
     <div className="sideNav">
         <FitHubLogoWhite></FitHubLogoWhite>
