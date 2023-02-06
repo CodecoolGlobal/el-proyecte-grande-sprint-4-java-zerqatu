@@ -2,7 +2,7 @@ import FitHubLogoWhite from "../atoms/FitHubLogoWhite";
 import NavbarLink from "../atoms/NavbarLink";
 
 
-const Navbar = () => {
+export default function Navbar() {
     return (
         <nav id="sidebar" className="">
             <div className="custom-menu">
@@ -30,5 +30,3 @@ const Navbar = () => {
         </nav>
     )
 }
-
-export default Navbar

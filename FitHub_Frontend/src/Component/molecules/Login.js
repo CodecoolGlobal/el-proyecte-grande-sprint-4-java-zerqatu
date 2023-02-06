@@ -1,6 +1,6 @@
-import {useState, useEffect} from "react";
+import useState from "react";
 
-const LoginForm = () => {
+export default function LoginForm() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     let url = '/profile'
@@ -14,15 +14,15 @@ const LoginForm = () => {
         })
             .then(res => res.status >= 400 ? alert('Email already taken') :
                 fetch('/user/login', {
-                method: 'GET',
-                body: JSON.stringify({email, password}),
-                headers: {'Content-Type': 'application/json'},
-            }))
-                .then(res => res.status >= 400 ? alert('You need to make an Account') : window.location.href = url)
+                    method: 'GET',
+                    body: JSON.stringify({email, password}),
+                    headers: {'Content-Type': 'application/json'},
+                }))
+            .then(res => res.status >= 400 ? alert('You need to make an Account') : window.location.href = url)
 
     }
 
-    return(
+    return (
         <div className="centered">
             <form onSubmit={submit}>
                 <label className="label">Login</label><br/>
@@ -45,5 +45,3 @@ const LoginForm = () => {
         </div>
     )
 }
-
-export default LoginForm

@@ -2,8 +2,8 @@ import FitHubLogoBlack from "../atoms/FitHubLogoBlack";
 import LoginButton from "../atoms/LoginButton";
 import RegisterButton from "../atoms/RegisterButton";
 
-const Landing = () => {
-    return(
+export default function Landing() {
+    return (
         <div className="App">
             <FitHubLogoBlack></FitHubLogoBlack>
             <div className="centered">
@@ -14,5 +14,3 @@ const Landing = () => {
         </div>
     )
 }
-
-export default Landing

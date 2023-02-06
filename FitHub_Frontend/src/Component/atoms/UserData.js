@@ -1,6 +1,5 @@
 import React from "react";
 import useFetch from "react-fetch-hook"
-import UserLogo from "./UserLogo";
 
 export default function UserData() {
     const {isLoading, error, data} = useFetch("/user/1")

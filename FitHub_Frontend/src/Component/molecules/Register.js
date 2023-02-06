@@ -1,23 +1,20 @@
 import {useState} from "react";
 
 
-const RegisterForm = () => {
+export default function RegisterForm() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const submit = e => {
         e.preventDefault();
-            fetch('/registration',{
-                method: 'POST',
-                body: JSON.stringify({email, password}),
-                headers: {'Content-Type': 'application/json' },
-            })
-                .then(res => res.status >= 400 ? alert('Email already taken'): console.log("ok"))
-                // console.log('error' + res.status)
-
-
+        fetch('/registration', {
+            method: 'POST',
+            body: JSON.stringify({email, password}),
+            headers: {'Content-Type': 'application/json'},
+        })
+            .then(res => res.status >= 400 ? alert('Email already taken') : console.log("ok"))
     }
 
-    return(
+    return (
         <div className="centered">
             <form onSubmit={submit}>
                 <label>Register</label><br/>
@@ -40,8 +37,6 @@ const RegisterForm = () => {
         </div>
     )
 }
-
-export default RegisterForm
 
 
 
