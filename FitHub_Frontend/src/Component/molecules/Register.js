@@ -1,6 +1,5 @@
 import {useState} from "react";
 
-
 export default function RegisterForm() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -15,25 +14,32 @@ export default function RegisterForm() {
     }
 
     return (
-        <div className="centered">
-            <form onSubmit={submit}>
-                <label>Register</label><br/>
-                <input
-                    type="text"
-                    name="user[email]"
-                    placeholder="Enter email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}/><br/>
-                <input
-                    type="text"
-                    name="user[password]"
-                    placeholder="Enter password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}/><br/>
-                <button type="submit">Submit</button>
-            </form>
+        <div id="content" className="p-4 p-md-5 pt-5">
+            <h2 className="mb-4">Register</h2>
+            <div>
+                <form onSubmit={submit}>
+                    <div className="grid-form-input">
+                        <label>Email</label>
+                        <input
+                            type="text"
+                            name="user[email]"
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}/>
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            name="user[password]"
+                            required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}/>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <button type="submit" className="text-round-border">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }

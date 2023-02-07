@@ -1,25 +1,30 @@
-import './assets/style/Sidebar.css';
-import './assets/style/App.css';
+import './assets/style/style.css';
 import {Route, Routes} from "react-router-dom";
-import Profile from "./Component/pages/Profile";
+import ProfilePage from "./Component/pages/ProfilePage";
 import Landing from "./Component/molecules/Landing";
-import Register from "./Component/molecules/Register";
-import Login from "./Component/molecules/Login";
-import Workouts from "./Component/pages/Workouts";
-import SettingsModal from "./Component/atoms/SettingsPage";
+import WorkoutsPage from "./Component/pages/WorkoutsPage";
+import LoginPage from "./Component/pages/LoginPage";
 import Template from "./Component/templates/Template";
+import RegisterPage from "./Component/pages/RegisterPage";
+import SettingsPage from "./Component/pages/SettingsPage";
+import NotFound from "./Component/pages/NotFound";
 
 function App() {
-  return (
-      <Routes>
-          <Route path="/profile" element={Template(Profile())}></Route>
-          <Route path="/" element={<Landing/>}></Route>
-          <Route path="/register" element={<Register/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
-          <Route path="/workouts" element={Template(Workouts())}></Route>
-          <Route path="settings" element={<SettingsModal/>}></Route>
-      </Routes>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={Template(Landing())}></Route>
+            <Route path="/profile" element={Template(ProfilePage())}></Route>
+            {/*Notifications*/}
+            <Route path="/workouts" element={Template(WorkoutsPage())}></Route>
+            {/*Meals*/}
+            <Route path="/settings" element={Template(SettingsPage())}></Route>
+            {/*Logout*/}
+            <Route path="/login" element={Template(LoginPage())}></Route>
+            <Route path="/register" element={Template(RegisterPage())}></Route>
+            <Route path="/*" element={Template(NotFound())}></Route>
+
+        </Routes>
+    );
 }
 
 export default App;

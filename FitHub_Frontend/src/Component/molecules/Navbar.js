@@ -1,7 +1,6 @@
 import FitHubLogoWhite from "../atoms/FitHubLogoWhite";
 import NavbarLink from "../atoms/NavbarLink";
 
-
 export default function Navbar() {
     return (
         <nav id="sidebar" className="">
@@ -25,6 +24,8 @@ export default function Navbar() {
                     {NavbarLink("Meals", "/meals", "fa-apple-whole")}
                     {NavbarLink("Settings", "/settings", "fa-gear")}
                     {NavbarLink("Logout", "/", "fa-right-from-bracket")}
+                    {NavbarLink("Login", "/login", "fa-right-to-bracket")}
+                    {NavbarLink("Register", "/register", "fa-user-plus")}
                 </ul>
             </div>
         </nav>

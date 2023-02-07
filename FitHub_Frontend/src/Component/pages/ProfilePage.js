@@ -1,6 +1,6 @@
 import UserData from "../atoms/UserData";
 
-export default function Profile() {
+export default function ProfilePage() {
     return (
         <UserData/>
     )

@@ -1,6 +1,6 @@
 import WorkoutData from "../atoms/WorkoutData";
 
-export default function Workouts() {
+export default function WorkoutsPage() {
     return (
         <WorkoutData/>
     )
