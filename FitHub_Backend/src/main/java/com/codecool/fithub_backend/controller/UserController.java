@@ -1,14 +1,13 @@
 package com.codecool.fithub_backend.controller;
 
 import com.codecool.fithub_backend.model.User;
-import com.codecool.fithub_backend.service.UserLogicService;
 import com.codecool.fithub_backend.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
-@RequestMapping
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
@@ -18,12 +17,12 @@ public class UserController {
     }
 
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public Optional<User> getUsers(@PathVariable long id) {
         return userService.getUserById(id);
     }
 
-    @PutMapping("/user")
+    @PutMapping()
     public void updateUser(@RequestBody User user) {
         userService.updateUser(user);
     }
@@ -33,7 +32,7 @@ public class UserController {
         userService.addUser(user);
     }
 
-    @PostMapping("/user/login")
+    @PostMapping("/login")
     public void getUserByLogin(@RequestBody User user) {
         String mail = user.getEmail();
         String password = user.getPassword();
@@ -42,7 +41,7 @@ public class UserController {
 
     }
 
-    @GetMapping("/user/{mail}/{password}")
+    @GetMapping("/{mail}/{password}")
     public Optional<User> getUserByMail(@PathVariable("mail") String mail,
                                         @PathVariable("password") String password) {
         return userService.getUserByEmail(mail, password);

@@ -25,9 +25,7 @@ public class UserService {
     }
 
     public void updateUser(User user) {
-        user.setAge(Period.between(LocalDate.parse(user.getDateOfBirth()), LocalDate.now()).getYears());
-        userLogicService.calculateBMI(user);
-        userLogicService.setDailyCaloriesByActivity(user);
+        userLogicService.processUser(user);
         userRepository.save(user);
     }
 

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/workouts")
 public class ExerciseController {
 
     private final ExerciseDataReader exerciseDataReader;
@@ -18,7 +18,7 @@ public class ExerciseController {
         this.exerciseDataReader = exerciseDataReader;
     }
 
-    @GetMapping("/exercises")
+    @GetMapping()
     public List<Exercise> getExercise() {
         System.out.println(exerciseDataReader.getExercises());
         return exerciseDataReader.getExercises();

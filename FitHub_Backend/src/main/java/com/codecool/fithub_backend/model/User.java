@@ -19,7 +19,7 @@ public class User {
     private String password;
 
     private String dateOfBirth;
-    private Integer age;
+    private int age;
     private Gender gender;
     private int height;
     private int weight;
