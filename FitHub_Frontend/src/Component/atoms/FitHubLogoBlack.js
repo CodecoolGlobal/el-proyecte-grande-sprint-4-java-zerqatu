@@ -1,5 +1,5 @@
 import React from "react";
-import fithubLogo from "../../assets/images/fithub_logo_text.png";
+import fithubLogo from "../../assets/images/fithub_logo_transparent.png";
 
 export default function fitHubLogoBlack() {
     return (

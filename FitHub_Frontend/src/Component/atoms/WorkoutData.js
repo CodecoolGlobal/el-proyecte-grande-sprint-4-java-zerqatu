@@ -27,7 +27,7 @@ export default function WorkoutData() {
                 <div className="workout-box">
                     {data.map((entry, i) => {
                         return <div key={i}
-                                    className="workouts">{entry.exercise.toLowerCase().replaceAll('_', ' ')}</div>;
+                                    className="text-round-border">{entry.exercise.toLowerCase().replaceAll('_', ' ')}</div>;
                     })}
                 </div>
 
