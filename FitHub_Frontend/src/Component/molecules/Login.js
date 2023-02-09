@@ -1,28 +1,39 @@
-import {useState} from "react";
+import { useState } from "react";
+import { Buffer } from "buffer"
 
 export default function LoginForm() {
-let [email, setEmail] = useState();
+    let [email, setEmail] = useState();
     let [password, setPassword] = useState();
-    let userData = JSON.stringify({email, password})
 
-    console.log("userdata" + userData);
+
+
 
     const submit = e => {
+
         e.preventDefault();
         email = document.getElementById("formEmail").value;
         password = document.getElementById("formPassword").value;
+        console.log(email + password);
+        const headers = new Headers();
+        const auth = Buffer.from(email + ":" + password).toString("base64");
+        console.log(auth);
+        headers.set("Authorization", "Basic " + auth)
         fetch('/login', {
             method: 'GET',
-            headers: {'Content-Type': 'application/json', 'authenticate': userData},
+            headers: headers,
         })
+            /*.then(res => res.text())
+            .then(text => console.log(text))*/
+        
             .then(res => {
                 if(res.status === 200) {
-                    localStorage.setItem('authentication', userData);
-                    window.location.href = "/profile";
+                    localStorage.setItem('Authorization', "Basic " + auth);
+                    window.location.href = "/workouts";
                 } else {
                     alert("Fuck you!");
                 }
             })
+            
     }
 
     return (
@@ -38,7 +49,7 @@ let [email, setEmail] = useState();
                             required
                             value={email}
                             id="formEmail"
-                            onChange={(e) => setEmail(e.target.value)}/>
+                            onChange={(e) => setEmail(e.target.value)} />
                         <label>Password</label>
                         <input
                             type="password"
@@ -46,7 +57,7 @@ let [email, setEmail] = useState();
                             required
                             value={password}
                             id="formPassword"
-                            onChange={(e) => setPassword(e.target.value)}/>
+                            onChange={(e) => setPassword(e.target.value)} />
                         <span></span>
                         <span></span>
                         <span></span>

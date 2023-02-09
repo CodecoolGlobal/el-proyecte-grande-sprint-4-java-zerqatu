@@ -1,15 +1,25 @@
 import React from "react";
 import UseFetch from "./UseFetch";
+import Fetch from "./Fetch";
 
 export default function WorkoutData() {
-    let {fetchStatus, data} = UseFetch("/api/workouts")
+//    let {fetchStatus, data} = UseFetch("/api/workouts")
 
-    if (fetchStatus !== null) {
+let credentials = localStorage.getItem('Authorization')
+console.log(credentials)
+console.log(localStorage)
+
+let fetchHeaders = {'Authorization': credentials};
+let fetchWorkouts = Fetch('/api/workouts', 'GET', '', fetchHeaders, '', '/workouts')
+
+console.log("workouts:" + fetchWorkouts)
+
+    if (fetchWorkouts !== null) {
         return (
             <div id="content" className="p-4 p-md-5 pt-5">
                 <h2 className="mb-4">Workouts</h2>
                 <div>
-                    {fetchStatus}
+                    {fetchWorkouts}
                 </div>
             </div>
         )
@@ -19,7 +29,7 @@ export default function WorkoutData() {
                 <h2 className="mb-4">Workouts</h2>
 
                 <div className="workout-box">
-                    {data.map((entry, i) => {
+                    {fetchWorkouts.map((entry, i) => {
                         return <div key={i}
                                     className="text-round-border">{entry.exercise.toLowerCase().replaceAll('_', ' ')}</div>;
                     })}

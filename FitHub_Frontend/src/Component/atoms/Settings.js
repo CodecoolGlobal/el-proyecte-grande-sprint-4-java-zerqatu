@@ -30,7 +30,7 @@ export default function SettingsForm() {
         let fetchUrl = '/user';
         let fetchMethod = 'PUT';
         let fetchBody = {id, userName, email, password, dateOfBirth, gender, height, weight, activity};
-        let fetchHeaders = 'application/json';
+        let fetchHeaders = {'Content-Type': 'application/json'};
         let fetchAlert = '';
 
         Fetch(fetchUrl, fetchMethod, fetchBody, fetchHeaders, fetchAlert, redirectUrl);

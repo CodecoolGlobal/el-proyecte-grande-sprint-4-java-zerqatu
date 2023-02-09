@@ -16,10 +16,10 @@ export default function Fetch(fetchUrl, fetchMethod, fetchBody, fetchHeaders, fe
 
 
 
-    fetch(fetchUrl,{
+    return fetch(fetchUrl,{
         method: fetchMethod,
-        body: JSON.stringify(fetchBody),
-        headers: {'Content-Type': fetchHeaders },
+        //body: JSON.stringify(fetchBody),
+        headers: fetchHeaders,
     })
         //.then(res => res.status >= 400 ? console.log(res): console.log("xy)"))
     .then(res => res.status >= 400 ? console.log(res): window.location.href = redirectUrl)

@@ -6,10 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
-
 @RestController
-@RequestMapping
 public class LandingController {
 
     private final UserService userService;
@@ -27,6 +24,8 @@ public class LandingController {
     }
 
     @GetMapping("/login")
-    public void login(Authentication authentication) {
+    public String login(Authentication authentication) {
+        System.out.println("authentication = " + authentication.getName());
+        return "Logged in! from Backend!";
     }
 }
