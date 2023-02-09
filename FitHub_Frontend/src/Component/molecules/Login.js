@@ -5,11 +5,7 @@ export default function LoginForm() {
     let [email, setEmail] = useState();
     let [password, setPassword] = useState();
 
-
-
-
     const submit = e => {
-
         e.preventDefault();
         email = document.getElementById("formEmail").value;
         password = document.getElementById("formPassword").value;
@@ -24,16 +20,16 @@ export default function LoginForm() {
         })
             /*.then(res => res.text())
             .then(text => console.log(text))*/
-        
             .then(res => {
                 if(res.status === 200) {
                     localStorage.setItem('Authorization', "Basic " + auth);
+                    console.log(localStorage.getItem('Authorization'));
+                    alert("Successfully logged in!");
                     window.location.href = "/workouts";
                 } else {
-                    alert("Fuck you!");
+                    alert("Your login credentials are incorrect. Please try again!");
                 }
             })
-            
     }
 
     return (

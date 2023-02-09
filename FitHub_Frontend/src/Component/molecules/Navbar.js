@@ -12,7 +12,7 @@ export default function Navbar() {
             </div>
             <div className="p-4">
                 <div className="logo-div">
-                    <h1><a href="http://fithub.cool" className="logo">
+                    <h1><a href="/" className="logo">
                         <span>{FitHubLogoWhite()}</span>
                         FitHub <span>Your Fitness Tracker</span></a></h1>
                 </div>
