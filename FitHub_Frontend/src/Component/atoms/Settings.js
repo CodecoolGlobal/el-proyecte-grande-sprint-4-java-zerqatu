@@ -1,36 +1,39 @@
 import useFetch from "react-fetch-hook";
 import {useState} from "react";
+import Fetch from "./Fetch";
 
 export default function SettingsForm() {
-    const [activity, setActivity] = useState();
-    const [dateOfBirth, setDateOfBirth] = useState();
-    const [height, setHeight] = useState();
-    const [userName, setUserName] = useState();
-    const [weight, setWeight] = useState();
-    const {isLoading, error, data} = useFetch("/user/1")
-    console.log(data)
+    let [userName, setUserName] = useState();
+    let [dateOfBirth, setDateOfBirth] = useState();
+    let [height, setHeight] = useState();
+    let [weight, setWeight] = useState();
+    let [gender, setGender] = useState();
+    let [activity, setActivity] = useState();
+
+    const {isLoading, error, data} = useFetch("/user/1");
     if (isLoading) return "Loading...";
     if (error) return "Error loading data";
 
     const submit = e => {
-        const url = "/profile"
         e.preventDefault();
-        let age = data.age
-        let bmi = data.bmi
-        let bmiType = data.bmiType
-        let dailyCalories = data.dailyCalories
-        let email = data.email
-        let id = data.id
-        let password = data.password
-        let noGender = document.getElementById("genderId")
-        let gender = noGender.value
+        let id = data.id;
+        let email = data.email;
+        let password = data.password;
+        userName = document.getElementById("formUserName").value;
+        dateOfBirth = document.getElementById("formDateOfBirth").value;
+        height = document.getElementById("formHeight").value;
+        weight = document.getElementById("formWeight").value;
+        gender = document.getElementById("formGender").value;
+        activity = document.getElementById("formActivity").value;
 
-        fetch('/user', {
-            method: 'PUT',
-            body: JSON.stringify({id, userName, email, password, dateOfBirth, gender, height, weight, activity}),
-            headers: {'Content-Type': 'application/json'},
-        })
-            .then(res => res.status >= 400 ? console.log(res) : window.location.href = url)
+        let redirectUrl = '/profile';
+        let fetchUrl = '/user';
+        let fetchMethod = 'PUT';
+        let fetchBody = {id, userName, email, password, dateOfBirth, gender, height, weight, activity};
+        let fetchHeaders = 'application/json';
+        let fetchAlert = '';
+
+        Fetch(fetchUrl, fetchMethod, fetchBody, fetchHeaders, fetchAlert, redirectUrl);
     }
 
     return (
@@ -39,22 +42,26 @@ export default function SettingsForm() {
             <div>
                 <form onSubmit={submit}>
 
-                    <div className="grid-form-input">
+                    <div className="grid-form-input grid-two-columns">
                         <label>Name</label>
-                        <input placeholder={data.userName} onChange={(e) => setUserName(e.target.value)}></input>
+                        <input defaultValue={data.userName} pattern=".{1,}" id="formUserName"
+                               onChange={(e) => setUserName(e.target.value)}></input>
                         <label>Date of birth</label>
-                        <input placeholder={data.dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)}></input>
+                        <input defaultValue={data.dateOfBirth} pattern="\d{4}-\d{2}-\d{2}" title="YYYY-MM-DD"
+                               id="formDateOfBirth" onChange={(e) => setDateOfBirth(e.target.value)}></input>
                         <label>Height (in cm)</label>
-                        <input placeholder={data.height} onChange={(e) => setHeight(e.target.value)}></input>
+                        <input defaultValue={data.height} pattern=".{2,}" title="Minimum 2 characters" id="formHeight"
+                               onChange={(e) => setHeight(e.target.value)}></input>
                         <label>Weight (in kg)</label>
-                        <input placeholder={data.weight} onChange={(e) => setWeight(e.target.value)}></input>
+                        <input defaultValue={data.weight} pattern=".{2,}" title="Minimum 2 characters" id="formWeight"
+                               onChange={(e) => setWeight(e.target.value)}></input>
                         <label>Gender</label>
-                        <select id="genderId">
-                            <option selected="selected" value="MALE">male</option>
+                        <select id="formGender" onChange={(e) => setGender(e.target.value)}>
+                            <option value="MALE">male</option>
                             <option value="FEMALE">female</option>
                         </select>
                         <label>Activity level</label>
-                        <select onChange={(e) => setActivity(e.target.value)}>
+                        <select id="formActivity" onChange={(e) => setActivity(e.target.value)}>
                             <option value="1">none</option>
                             <option value="2">light</option>
                             <option value="3">normal</option>

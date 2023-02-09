@@ -25,6 +25,7 @@ public class UserController {
     @PutMapping()
     public void updateUser(@RequestBody User user) {
         userService.updateUser(user);
+        System.out.println(user);
     }
 
     @PostMapping("/registration")

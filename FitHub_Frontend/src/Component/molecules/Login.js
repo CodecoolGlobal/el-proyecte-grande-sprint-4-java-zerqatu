@@ -1,27 +1,28 @@
 import {useState} from "react";
-//import {useForm} from "react";
 
 export default function LoginForm() {
-    //const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-    let url = '/profile'
+let [email, setEmail] = useState();
+    let [password, setPassword] = useState();
+    let userData = JSON.stringify({email, password})
+
+    console.log("userdata" + userData);
 
     const submit = e => {
         e.preventDefault();
-        fetch('/user/login', {
-            method: 'POST',
-            body: JSON.stringify({email, password}),
-            headers: {'Content-Type': 'application/json'},
+        email = document.getElementById("formEmail").value;
+        password = document.getElementById("formPassword").value;
+        fetch('/login', {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json', 'authenticate': userData},
         })
-            .then(res => res.status >= 400 ? alert('Email already taken') :
-                fetch('/user/login', {
-                    method: 'GET',
-                    body: JSON.stringify({email, password}),
-                    headers: {'Content-Type': 'application/json'},
-                }))
-            .then(res => res.status >= 400 ? alert('You need to make an Account') : window.location.href = url)
-
+            .then(res => {
+                if(res.status === 200) {
+                    localStorage.setItem('authentication', userData);
+                    window.location.href = "/profile";
+                } else {
+                    alert("Fuck you!");
+                }
+            })
     }
 
     return (
@@ -29,13 +30,14 @@ export default function LoginForm() {
             <h2 className="mb-4">Login</h2>
             <div>
                 <form onSubmit={submit}>
-                    <div className="grid-form-input">
+                    <div className="grid-form-input grid-two-columns">
                         <label>Email</label>
                         <input
                             type="text"
                             name="user[email]"
                             required
                             value={email}
+                            id="formEmail"
                             onChange={(e) => setEmail(e.target.value)}/>
                         <label>Password</label>
                         <input
@@ -43,6 +45,7 @@ export default function LoginForm() {
                             name="user[password]"
                             required
                             value={password}
+                            id="formPassword"
                             onChange={(e) => setPassword(e.target.value)}/>
                         <span></span>
                         <span></span>

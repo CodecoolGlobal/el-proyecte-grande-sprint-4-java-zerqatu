@@ -455,7 +455,6 @@ a[data-toggle=collapse] {
 
 div.grid-form-input {
     display: grid;
-    grid-template-columns: max-content max-content;
     grid-gap: 15px;
 }
 
@@ -465,4 +464,12 @@ div.grid-form-input label {
 
 div.grid-form-input label:after {
     content: ":";
+}
+
+div.grid-two-columns {
+    grid-template-columns: max-content max-content;
+}
+
+div.grid-three-columns {
+    grid-template-columns: max-content max-content max-content;
 }

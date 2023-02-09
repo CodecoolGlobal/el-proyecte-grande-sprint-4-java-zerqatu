@@ -1,15 +1,9 @@
 import React from "react";
-import useFetch from "react-fetch-hook"
+import UseFetch from "./UseFetch";
 
 export default function UserData() {
-    const {isLoading, error, data} = useFetch("/user/1")
-    let fetchStatus = null;
-    if (isLoading) {
-        fetchStatus = "Loading . . .";
-    }
-    if (error) {
-        fetchStatus = "Error loading data";
-    }
+    let {fetchStatus, data} = UseFetch("/user/1")
+
     if (fetchStatus !== null) {
         return (
             <div id="content" className="p-4 p-md-5 pt-5">
@@ -31,6 +25,7 @@ export default function UserData() {
                 <div>{data.height} cm</div>
                 <div>{data.weight} kg</div>
                 <div>{data.dailyCalories} kcal</div>
+                <div>{data.bmi} BMI</div>
             </div>)
     }
 }
