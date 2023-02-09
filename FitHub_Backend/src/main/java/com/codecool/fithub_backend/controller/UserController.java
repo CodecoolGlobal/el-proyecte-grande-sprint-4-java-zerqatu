@@ -22,14 +22,9 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @PutMapping()
+    @PutMapping
     public void updateUser(@RequestBody User user) {
         userService.updateUser(user);
-    }
-
-    @PostMapping("/registration")
-    public void registerUser(@RequestBody User user) {
-        userService.addUser(user);
     }
 
     @PostMapping("/login")
