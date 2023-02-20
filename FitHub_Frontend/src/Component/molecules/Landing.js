@@ -16,8 +16,8 @@ export default function Landing() {
                 <ul>
                     <li>Accurate tracking of calories burned and consumed</li>
                     <li>Personalized workout plans tailored to your fitness level and goals</li>
-                    <li>A comprehensive dashboard to monitor your progress and set new goalsCustomizable reminders to
-                        help you stay on track with your fitness routine
+                    <li>A comprehensive dashboard to monitor your progress and set new goals</li>
+                    <li>Customizable reminders to help you stay on track with your fitness routine
                     </li>
                 </ul>
                 <div>FitHub is the perfect companion for anyone looking to improve their fitness and overall
