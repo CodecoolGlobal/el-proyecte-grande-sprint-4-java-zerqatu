@@ -12,8 +12,8 @@ public class UserPopulator {
     @Bean
     ApplicationRunner populate(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return args -> {
-            User user = new User("user", passwordEncoder.encode("123"));
-            userRepository.save(user);
+            User demoUser = new User("user@fithub.cool", passwordEncoder.encode("123"));
+            userRepository.save(demoUser);
         };
     }
 }
